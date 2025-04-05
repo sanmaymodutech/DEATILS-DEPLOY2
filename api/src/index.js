@@ -25,7 +25,17 @@ const corsOptions = {
   },
 };
 
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: [
+      "https://deatils-deploy-2-jd3l.vercel.app",
+      process.env.FRONTEND_URL,
+    ],
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 
 app.use("/api/quotations", require("./routes/quotationRoutes"));
 app.use("/api/quotation/onsite-work", onsiteRoutes);
