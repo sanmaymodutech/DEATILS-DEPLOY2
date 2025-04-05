@@ -13,7 +13,10 @@ app.use(express.json());
 const corsOptions = {
   credentials: true,
   origin: function (origin, callback) {
-    const allowedOrigins = [process.env.FRONTEND_URL];
+    const allowedOrigins = [
+      process.env.FRONTEND_URL,
+      "https://deatils-deploy-2-jd3l.vercel.app", // Add your frontend URL here
+    ];
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
