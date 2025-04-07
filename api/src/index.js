@@ -10,20 +10,20 @@ connectDB();
 
 app.use(express.json());
 
-const corsOptions = {
-  credentials: true,
-  origin: function (origin, callback) {
-    const allowedOrigins = [
-      process.env.FRONTEND_URL,
-      "https://deatils-deploy-2-jd3l.vercel.app", // Add your frontend URL here
-    ];
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-};
+// const corsOptions = {
+//   credentials: true,
+//   origin: function (origin, callback) {
+//     const allowedOrigins = [
+//       process.env.FRONTEND_URL,
+//       "https://deatils-deploy-2-jd3l.vercel.app", // Add your frontend URL here
+//     ];
+//     if (!origin || allowedOrigins.includes(origin)) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error("Not allowed by CORS"));
+//     }
+//   },
+// };
 
 app.use(
   cors({
