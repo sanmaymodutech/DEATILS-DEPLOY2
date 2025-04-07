@@ -27,22 +27,19 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: [
-      "https://deatils-deploy-2-jd3l.vercel.app",
-      process.env.FRONTEND_URL,
-    ],
+    origin: ["https://deatils-deploy-2-jd3l.vercel.app"],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
-app.get("/api/test", (req, res) => {
-  res.header(
-    "Access-Control-Allow-Origin",
-    "https://deatils-deploy-2-jd3l.vercel.app"
-  );
-  res.send({ message: "CORS test successful" });
-});
+// app.get("/api/test", (req, res) => {
+//   res.header(
+//     "Access-Control-Allow-Origin",
+//     "https://deatils-deploy-2-jd3l.vercel.app"
+//   );
+//   res.send({ message: "CORS test successful" });
+// });
 app.options("*", cors());
 app.use("/api/quotations", require("./routes/quotationRoutes"));
 app.use("/api/quotation/onsite-work", onsiteRoutes);

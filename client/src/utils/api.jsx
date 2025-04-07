@@ -2,7 +2,8 @@ import axios from "axios";
 
 // Create an Axios instance
 const api = axios.create({
-  baseURL: "https://deatils-deploy-2.vercel.app/api", // Change to your API URL
+  baseURL: "https://deatils-deploy-2.vercel.app/api",
+  withCredentials: true, // Add this if you're using credentials
 });
 
 // Request Interceptor: Attach token to headers
