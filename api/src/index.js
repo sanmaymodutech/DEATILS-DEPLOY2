@@ -36,7 +36,14 @@ app.use(
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
-
+app.get("/api/test", (req, res) => {
+  res.header(
+    "Access-Control-Allow-Origin",
+    "https://deatils-deploy-2-jd3l.vercel.app"
+  );
+  res.send({ message: "CORS test successful" });
+});
+app.options("*", cors());
 app.use("/api/quotations", require("./routes/quotationRoutes"));
 app.use("/api/quotation/onsite-work", onsiteRoutes);
 app.use("/api/auth", require("./routes/authRoutes"));
