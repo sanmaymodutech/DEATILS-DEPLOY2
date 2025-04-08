@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Create an Axios instance
 const api = axios.create({
-  baseURL: "https://deatils-deploy-2.vercel.app/api",
+  baseURL: "https://details-api-deploy.onrender.com/api",
   withCredentials: true, // Add this if you're using credentials
 });
 
